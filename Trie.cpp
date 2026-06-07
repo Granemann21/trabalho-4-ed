@@ -6,13 +6,13 @@ TrieNode::TrieNode() {
     this->isEndOfTitle = false;
     this->game = nullptr;
     for (int i = 0; i < ALPHABET_SIZE; i++) {
-        this->children = nullptr;
+        this->children[i] = nullptr;
     }
 }
 
 TrieNode::~TrieNode() {
     for (int i = 0; i < ALPHABET_SIZE; i++) {
-        if (this->children != nullptr) {
+        if (this->children[i] != nullptr) {
             delete this->children[i];
         }
     }
